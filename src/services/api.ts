@@ -1,5 +1,7 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.nongduocmiennam.vn:5056/api";
-
+if (typeof window === 'undefined') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
 // ======================= GIAO DIỆN CHUNG =======================
 
 // Lấy Menu điều hướng
