@@ -36,6 +36,8 @@ const BREADCRUMB_MAP: Record<string, string> = {
   "chia-se-kien-thuc": "Chia sẻ kiến thức",
   "tin-tuc": "Tin tức",
   "khuyen-mai": "Khuyến mãi",
+  "gioi-thieu": "Giới thiệu",
+  "lien-he": "Liên hệ",
 };
 
 export const getBreadcrumbInfo = (slug: string): BreadcrumbData => {
