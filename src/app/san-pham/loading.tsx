@@ -1,12 +1,33 @@
 export default function Loading() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] w-full bg-white">
-      {/* Vòng xoay Spinner màu xanh Nông Dược Miền Nam */}
-      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#00a651]"></div>
-      
-      <p className="mt-4 text-[#00a651] font-bold animate-pulse uppercase tracking-widest text-sm">
-        Đang tải nội dung bài viết...
-      </p>
+    <div className="bg-[#f4f4f4] min-h-screen">
+      <div className="max-w-[1340px] mx-auto px-4 py-6">
+
+        {/* Skeleton thanh filter danh mục */}
+        <div className="flex gap-2 mb-6 overflow-x-auto pb-1">
+          {[...Array(5)].map((_, i) => (
+            <div key={i} className="h-9 w-32 rounded-full bg-gray-200 animate-pulse shrink-0" />
+          ))}
+        </div>
+
+        {/* Skeleton */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          {[...Array(15)].map((_, i) => (
+            <div key={i} className="bg-white rounded-lg overflow-hidden shadow-sm">
+              {/* Ảnh */}
+              <div className="aspect-square bg-gray-200 animate-pulse" />
+              {/* Tên */}
+              <div className="p-3 space-y-2">
+                <div className="h-3 bg-gray-200 animate-pulse rounded w-full" />
+                <div className="h-3 bg-gray-200 animate-pulse rounded w-3/4" />
+                {/* Nút */}
+                <div className="h-8 bg-gray-200 animate-pulse rounded mt-2" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
     </div>
   );
-} 
+}

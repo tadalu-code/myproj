@@ -65,20 +65,20 @@ export default async function DiseaseCategoryPage({ params }: { params: Promise<
     <div className="bg-[#f4f4f4] min-h-screen text-gray-800 font-sans">
       {/* BREADCRUMB */}
       <div className="max-w-[1340px] mx-auto px-4 py-4">
-        <nav className="flex items-center gap-2 text-[14px]">
-          <Link href="/" className="flex items-center gap-1 hover:underline text-[#028046]">
-            <Home size={16} /> Trang chủ
+        <nav className="flex items-center gap-1 md:gap-2 text-[12px] md:text-[14px] overflow-hidden">
+          <Link href="/" className="flex items-center gap-1 hover:underline text-[#028046] whitespace-nowrap shrink-0">
+            <Home size={14} /> Trang chủ
           </Link>
-          <span className="text-gray-300">/</span>
+          <span className="text-gray-300 shrink-0">/</span>
           {breadcrumb.parentName && (
             <>
-              <Link href={breadcrumb.parentLink!} className="hover:underline text-[#028046]">
+              <Link href={breadcrumb.parentLink!} className="hover:underline text-[#028046] whitespace-nowrap shrink-0 hidden sm:block">
                 {breadcrumb.parentName}
               </Link>
-              <span className="text-gray-300">/</span>
+              <span className="text-gray-300 shrink-0 hidden sm:block">/</span>
             </>
           )}
-          <span className="font-bold text-[#028046]">{breadcrumb.currentName}</span>
+          <span className="font-bold text-[#028046] truncate min-w-0">{breadcrumb.currentName}</span>
         </nav>
       </div>
 

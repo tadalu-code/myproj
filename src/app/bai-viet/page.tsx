@@ -24,7 +24,7 @@ export default async function AllPostsPage() {
 
       {/* BREADCRUMB */}
       <div className="max-w-[1340px] mx-auto px-4 py-4">
-        <nav className="flex items-center gap-2 text-[14px]">
+        <nav className="flex items-center gap-2 text-[12px] md:text-[14px]">
           <Link href="/" className="flex items-center gap-1 hover:underline text-[#028046]">
             <Home size={16} /> Trang chủ
           </Link>

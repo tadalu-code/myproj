@@ -97,20 +97,20 @@ export default async function PostDetailPage({ params }: Props) {
       <div className="max-w-[1340px] mx-auto px-4 lg:px-6 mt-4">
 
         {/* BREADCRUMB */}
-        <nav className="flex items-center flex-wrap gap-2 text-[16px] text-[#00a651] font-medium mb-6">
-          <Link href="/" className="flex items-center gap-1 hover:underline">
+        <nav className="flex items-center gap-1 md:gap-2 text-[12px] md:text-[16px] text-[#00a651] font-medium mb-6 overflow-hidden">
+          <Link href="/" className="flex items-center gap-1 hover:underline shrink-0">
             <Home size={15} className="mb-[2px]" /> Trang chủ
           </Link>
-          <span className="text-gray-400">/</span>
+          <span className="text-gray-400 shrink-0">/</span>
           {breadcrumb.parentName && (
             <>
-              <Link href={breadcrumb.parentLink!} className="hover:underline">
+              <Link href={breadcrumb.parentLink!} className="hover:underline shrink-0 hidden sm:block">
                 {breadcrumb.parentName}
               </Link>
-              <span className="text-gray-400">/</span>
+              <span className="text-gray-400 shrink-0 hidden sm:block">/</span>
             </>
           )}
-          <Link href={`/bai-viet/${topicSlug}`} className="hover:underline">
+          <Link href={`/bai-viet/${topicSlug}`} className="hover:underline truncate min-w-0">
             {breadcrumb.currentName}
           </Link>
         </nav>

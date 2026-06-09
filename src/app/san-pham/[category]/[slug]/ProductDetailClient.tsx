@@ -70,9 +70,49 @@ export default function ProductDetailClient({ category, slug, initialProduct }: 
 
   if (loading)
     return (
-      <div className="w-full min-h-screen flex flex-col items-center justify-center bg-white gap-4">
-        <div className="w-10 h-10 border-4 border-gray-100 border-t-[#007bff] rounded-full animate-spin"></div>
-        <p className="font-medium text-gray-400 text-[13px] tracking-widest">Đang tải sản phẩm...</p>
+      <div className="bg-white min-h-screen">
+        <div className="max-w-[1280px] mx-auto px-6 py-6">
+          {/* Nút quay lại */}
+          <div className="h-4 w-16 bg-gray-200 animate-pulse rounded mb-8" />
+
+          {/* Layout 2 cột */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            {/* Cột trái: ảnh */}
+            <div className="flex flex-col gap-4">
+              <div className="aspect-square bg-gray-200 animate-pulse rounded-lg" />
+              <div className="flex gap-3">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="w-[75px] h-[75px] bg-gray-200 animate-pulse rounded" />
+                ))}
+              </div>
+            </div>
+
+            {/* Cột phải: thông tin */}
+            <div className="flex flex-col gap-4 pt-2">
+              <div className="h-8 bg-gray-200 animate-pulse rounded w-3/4" />
+              <div className="h-6 bg-gray-200 animate-pulse rounded w-1/2" />
+              <div className="h-12 bg-gray-200 animate-pulse rounded w-36 mt-4" />
+              {/* Tags sản phẩm liên quan */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="h-9 w-24 bg-gray-200 animate-pulse rounded" />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Tabs */}
+          <div className="h-12 bg-gray-200 animate-pulse rounded w-64 mb-6" />
+          <div className="space-y-3">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="h-4 bg-gray-200 animate-pulse rounded"
+                style={{ width: `${90 - i * 8}%` }}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     );
 
